@@ -1,6 +1,7 @@
 class Account
-    attr_accessor :owner
+    attr_accessor :pin_code, :owner
     def initialize (attrs = {})
+        @pin_code = rand(1000..9999)
         set_owner(attrs[:owner])
     end
 
