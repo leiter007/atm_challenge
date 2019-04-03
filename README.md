@@ -46,3 +46,12 @@ I need to have a personal account
 As a ATM operator      
 In order to keep track of our costumers     
 We want to assign each account to a separate person
+
+As a Person
+In order to be able to use banking service to manage my funds
+I would like to be able to create a bank account
+
+
+As a Person with a bank account
+in order to be able to put my funds in the account
+i would like to be able to make a deposit
