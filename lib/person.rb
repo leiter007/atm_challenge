@@ -31,6 +31,11 @@ def missing_name
   raise 'A name is required'
 end
 
+def missing_account
+  raise 'No account present'
+end
+
+
 
 
 end

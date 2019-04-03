@@ -55,3 +55,7 @@ I would like to be able to create a bank account
 As a Person with a bank account
 in order to be able to put my funds in the account
 i would like to be able to make a deposit
+
+As a Person without a Bank Account,
+in order to prevent me from using the wrong bank account,
+I should NOT be able to to make a deposit.
