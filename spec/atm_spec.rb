@@ -1,4 +1,5 @@
 require './lib/atm.rb'
+require 'pry'
 
 describe Atm do 
     let(:account) { instance_double('Account', pin_code: '1234', exp_date: '11/19', account_status: :active) }
@@ -31,6 +32,11 @@ describe Atm do
         expect(subject.withdraw(105, '1234', account)).to eq expected_output
     end
 
+    it 'rejects withdraw if amount is not divisible by 5' do
+        expected_output = {status: false, message: 'Amount need to be divisible by 5', date: Date.today}
+        expect(subject.withdraw(44, '1234', account)).to eq expected_output
+    end
+
     it 'rejects withdraw if ATM has insufficient funds' do
       subject.funds = 50       
       expected_output = {status: false, message: 'insufficient funds in ATM', date: Date.today}
@@ -53,5 +59,4 @@ describe Atm do
       expected_output = { status: false, message: 'account is disabled', date: Date.today }
       expect(subject.withdraw(6, '1234', account)).to eq expected_output
     end
-
 end

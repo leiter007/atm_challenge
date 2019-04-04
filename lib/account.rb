@@ -1,7 +1,9 @@
+require './lib/person'
+require './lib/atm'
+
 class Account
-
     STANDARD_VALIDITY_YRS = 5
-
+    
     attr_accessor :balance, :pin_code, :account_status, :exp_date, :owner
     def initialize (attrs = {})
         @balance = 0
@@ -29,3 +31,5 @@ class Account
         Date.today.next_year(STANDARD_VALIDITY_YRS).strftime('%m/%y')
     end
 end
+
+

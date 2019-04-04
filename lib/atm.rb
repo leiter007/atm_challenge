@@ -1,4 +1,6 @@
 require 'date'
+require './lib/account'
+require './lib/person'
 
 class Atm 
     attr_accessor :funds
@@ -19,6 +21,8 @@ class Atm
             {status: false, message: 'wrong pin', date: Date.today }
         when card_expired?(account.exp_date)
             { status: false, message: 'card expired', date: Date.today }
+        when amount_correct?(amount)
+            {status: false, message: 'Amount need to be divisible by 5', date: Date.today }
         else
             perform_transaction(amount, account)
         end
@@ -26,6 +30,10 @@ class Atm
 
     private
 
+    def amount_correct?(amount)
+        amount % 5 != 0
+    end
+    
     def insufficient_funds_in_account?(amount, account)
     amount > account.balance
     end
