@@ -3,10 +3,11 @@ require './lib/account'
 require './lib/person'
 
 class Atm 
-    attr_accessor :funds
+    attr_accessor :funds, :bill_divider
 
     def initialize 
         @funds = 1000
+        @bill_divider = 5
     end
     
     def withdraw(amount, pin_code, account)
@@ -22,7 +23,7 @@ class Atm
         when card_expired?(account.exp_date)
             { status: false, message: 'card expired', date: Date.today }
         when amount_correct?(amount)
-            {status: false, message: 'Amount need to be divisible by 5', date: Date.today }
+            {status: false, message: "Amount need to be divisible by #{@bill_divider}", date: Date.today }
         else
             perform_transaction(amount, account)
         end
@@ -31,7 +32,7 @@ class Atm
     private
 
     def amount_correct?(amount)
-        amount % 5 != 0
+        amount % @bill_divider != 0
     end
     
     def insufficient_funds_in_account?(amount, account)
@@ -59,11 +60,11 @@ class Atm
         account.balance = account.balance - amount
         { status: true, message: 'success', date: Date.today, amount: amount, bills: add_bills(amount) }
     end
-      
+
     def add_bills(amount)
-        denominations = [20, 10, 5]
+        bill_options = [20, 10, 5]
         bills = []
-        denominations.each do |bill|
+        bill_options.each do |bill|
         while amount - bill >= 0
             amount -= bill
             bills << bill
