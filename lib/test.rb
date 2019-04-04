@@ -2,27 +2,31 @@ require './lib/person'
 require './lib/atm'
 require './lib/account'
 
-#User acceptance testing in IRB
+##User acceptance testing in IRB##
 
-#1. ATM can hold up to 1000 dollar
-    #a: Check if Person cannot deposit funds into ATM so that balance > 1000
-    #b: 
-
-
-#Pre-conditions
-Felix = Person.new(name: "Felix")
+#Pre-conditions#
+Person1= Person.new(name: "Boa")
 Atm1 = Atm.new
-AccountNum = Felix.create_account
-NewPin = Felix.account.pin_code
+AccountNum = Person1.create_account
+NewPin = Person1.account.pin_code
+puts "The ATM has starting funds of #{Atm1.funds}"
 
-#Action
-Felix. deposit(200)
+#Action#
+Starting_cash = 500
+NewDeposit = 200
+NewWithdrawal = 45
 
-#Output
-puts Atm1.funds
+#Executions#
+Person1.cash = Starting_cash
+Person1.deposit(NewDeposit)
+Person1.withdraw(amount: NewWithdrawal, pin: NewPin, account: AccountNum, atm: Atm1)
 
-'puts Atm1.withdraw(44, NewPin, AccountNum)'
-'puts Felix.account.balance'
-
+#Execution Outputs#
+puts "#{Person1.name}'s starting cash balance is #{Starting_cash}"                    #ANS 1: 500 #
+puts "#{Person1.name}'s made a new deposit of #{NewDeposit} from cash balance"        #ANS 2: 200 #
+puts "#{Person1.name}'s made a new withdrawal of #{NewWithdrawal} from the ATM"       #ANS 3: 45 #
+puts "#{Person1.name}'s NEW cash balance is #{Person1.cash}"                          #ANS 4: 345 #
+puts "#{Person1.name}'s NEW account balance is #{Person1.account.balance}"            #ANS 5: 155 #
+puts "ATM NEW funds are #{Atm1.funds}"                                                #ANS 6: 955 #
 
 

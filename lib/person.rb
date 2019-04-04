@@ -18,12 +18,24 @@ def deposit(amount)
 end
 
 def withdraw(args = {})
-  @account == nil ? missing_account : withdraw_funds(args)
+atm = set_atm(args)
+account = @account
+amount = args[:amount]
+pin = args[:pin]
+withdrawal = atm.withdraw(amount, pin, account)
+
+  case
+    when @account == nil
+    missing_account
+    when withdrawal[:status] == false
+    withdrawal
+    else  
+    increase_cash(withdrawal)
+  end
 end
 
 
 private
-
 def deposit_funds(amount)
     @cash -= amount
     @account.balance += amount
@@ -33,30 +45,23 @@ def set_name(name)
     name == nil ? missing_name : name
 end
 
+def set_atm(args)
+  args[:atm] == nil ? missing_atm : args[:atm]
+end
+
 def missing_name
-  raise 'A name is required'
+  raise ArgumentError, 'A name is required'
 end
 
 def missing_account
-  raise 'No account present'
+  raise RuntimeError, 'No account present'
 end
 
 def missing_atm
     raise RuntimeError, 'An ATM is required'
 end
 
-def increase_cash(response)
-    @cash += response[:amount]
-end
-
-
-
-def withdraw_funds(args)
-  args[:atm] == nil ? missing_atm : atm = args[:atm]
-  account = @account
-  amount = args[:amount]
-  pin = args[:pin]
-  response = atm.withdraw(amount, pin, account)
-  response[:status] == true ? increase_cash(response) : response
+def increase_cash(withdrawal)
+    @cash += withdrawal[:amount]
 end
 end
