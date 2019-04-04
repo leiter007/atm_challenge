@@ -12,6 +12,11 @@ describe Atm do
         expect(subject.funds).to eq 1000
     end
 
+    it 'cannot have funds above $1000' do
+        expected_output = {status: false, message: 'funds cannot be higher than 1000', date: Date.today}
+        expect(subject.funds(1100)).to eq expected_output
+    end
+
     it 'funds are reduced at withdraw' do
         subject.withdraw(50, '1234', account)
         expect(subject.funds).to eq 950

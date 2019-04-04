@@ -9,20 +9,20 @@ require './lib/account'
     #b: 
 
 
-#Test 1: Make a withdrawal of 100
+#Pre-conditions
 Felix = Person.new(name: "Felix")
 Atm1 = Atm.new
 AccountNum = Felix.create_account
-Felix. deposit(200)
 NewPin = Felix.account.pin_code
 
-puts Atm1.withdraw(44, NewPin, AccountNum)
-puts Felix.account.balance
+#Action
+Felix. deposit(200)
+
+#Output
 puts Atm1.funds
 
-
-
-
+'puts Atm1.withdraw(44, NewPin, AccountNum)'
+'puts Felix.account.balance'
 
 
 
