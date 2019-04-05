@@ -14,7 +14,7 @@ puts "The ATM has starting funds of #{Atm1.funds}"
 #Action#
 Starting_cash = 500
 NewDeposit = 200
-NewWithdrawal = 45
+NewWithdrawal = 55
 
 #Executions#
 Person1.cash = Starting_cash
