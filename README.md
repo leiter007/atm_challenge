@@ -1,20 +1,26 @@
 # ATM CHALLENGE
 
+
+## Description 
+This repo contains the first challenge of the [Craft Academy Bootcamp](https://craftacademy.se/english/curriculum/), by April 2019 Cohort. During a week, we were asked to create the back-end system of an ATM in Ruby Programming language. 
+
+Pair programmed by [leiter007](https://github.com/leiter007) & [snailcoder1](https://github.com/SnailCoder1).
+
 ## Problem Statement
 Bank customers, in need of cash, would benefit from being able to get cash in a quick yet secure way. Getting cash should be possible without limitations of Bank office opening hours.
 
 ## Objectives
-The following objectives must be met:\
-1.An ATM machine can hold up to $1000\
-2.Withdrawal can be cleared only if:\
-    a.The ATM holds enough funds\
-    b.The amount is divisible by 5\
-    c.The person attempting the withdrawal provides a valid ATM card\
-    d.Valid pin and expire date\
-    e.Card status must be active (Not report stolen or lost)\
-    f.The person attempting the withdrawal has sufficient funds on his account\
-3.There are only $5, $10 and $20 bills in the ATM. Withdrawals for amounts not divisible by 5 must be rejected.\
-4.Upon a successful withdrawal the system should return a receipt with information about the date, amount and bills that was dispatched. The receipt should be presented in the form of a Hash.\
+The following objectives must be met:
++ An ATM machine can hold up to $1000
++ Withdrawal can be cleared only if:
+  + The ATM holds enough funds
+  + The amount is divisible by 5
+  + The person attempting the withdrawal provides a valid ATM card
+  + Valid pin and expire date
+  + Card status must be active (Not report stolen or lost)
+  + The person attempting the withdrawal has sufficient funds on his account
++ There are only $5, $10 and $20 bills in the ATM. Withdrawals for amounts not divisible by 5 must be rejected.
++ Upon a successful withdrawal the system should return a receipt with information about the date, amount and bills that was dispatched. The receipt should be presented in the form of a Hash.
 
 ## User Stories
 ```
