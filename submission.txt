@@ -1,0 +1,5 @@
+SUBMISSION WEEK 1: ATM CHALLENGE
+Pair programming: Boa and Felix
+
+Felix repo: https://github.com/leiter007/atm_challenge
+Boa's repo: https://github.com/SnailCoder1/atm_challenge-1
