@@ -4,17 +4,17 @@
 Bank customers, in need of cash, would benefit from being able to get cash in a quick yet secure way. Getting cash should be possible without limitations of Bank office opening hours.
 
 ## Objectives
-The following objectives must be met:__
-1.An ATM machine can hold up to $1000__
-2.Withdrawal can be cleared only if:__
-    a.The ATM holds enough funds__
-    b.The amount is divisible by 5__
-    c.The person attempting the withdrawal provides a valid ATM card__
-    d.Valid pin and expire date__
-    e.Card status must be active (Not report stolen or lost)__
-    f.The person attempting the withdrawal has sufficient funds on his account__
-3.There are only $5, $10 and $20 bills in the ATM. Withdrawals for amounts not divisible by 5 must be rejected.__
-4.Upon a successful withdrawal the system should return a receipt with information about the date, amount and bills that was dispatched. The receipt should be presented in the form of a Hash.__
+The following objectives must be met:\
+1.An ATM machine can hold up to $1000\
+2.Withdrawal can be cleared only if:\
+    a.The ATM holds enough funds\
+    b.The amount is divisible by 5\
+    c.The person attempting the withdrawal provides a valid ATM card\
+    d.Valid pin and expire date\
+    e.Card status must be active (Not report stolen or lost)\
+    f.The person attempting the withdrawal has sufficient funds on his account\
+3.There are only $5, $10 and $20 bills in the ATM. Withdrawals for amounts not divisible by 5 must be rejected.\
+4.Upon a successful withdrawal the system should return a receipt with information about the date, amount and bills that was dispatched. The receipt should be presented in the form of a Hash.\
 
 ## User Stories
 ```
